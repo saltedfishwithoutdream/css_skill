@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色表盘</title>
+</head>
+
+<style>
+.rainbow {
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(red, orange, yellow, green, teal, blue, purple);
+  border-radius: 50%;
+}
+
+.colors {
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(red, #ff4d00, #ff9900, #ffe600, #ccff00, #80ff00, #33ff00, #00ff1a, #00ff66, #00ffb3, aqua, #00b3ff, #0066ff, #001aff, #3300ff, #8000ff, #cc00ff, #ff00e6, #ff0099, #ff004d, red);
+  border-radius: 50%;
+}
+
+.rainbow,
+.colors {
+  float: left;
+  margin: 20px;
+}
+
+.container {
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="rainbow"></div>
+        <div class="colors"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+.box {
+    width: 500px;
+    height: 100px;
+    background: linear-gradient(90deg,  #ffc700 0%, #e91e1e 33%, #6f27b0 66%, #00ff88 100%);
+    background-position: 100% 0;
+    animation: bgSize 5s infinite ease-in-out alternate;
+
+}
+
+@keyframes bgSize {
+    0% {
+        background-size: 300% 100%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+</style>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

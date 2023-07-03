@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(ellipse farthest-side at 40% 0%, #455A64 0%, #263238 60%, #1a2327 100%)
+}
+
+div {
+  margin: auto;
+}
+
+.box {
+  margin: auto;
+  width: 400px;
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+  font-size: 180px;
+  font-weight: bold;
+  color: transparent;
+  background: url("https://picsum.photos/500/500?random=5") no-repeat center center;
+  background-size: cover;
+  -webkit-background-clip: text;
+}
+
+.box2 {
+    font-size: 54px;
+    color: transparent;
+    background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+    -webkit-background-clip: text;
+    animation: huerotate 3s infinite;
+}
+
+@keyframes huerotate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.container {
+	background: #fff;
+	height: 100vh;
+	display: flex;
+}
+
+/***************
+ * Main content
+ ***************/
+.content {
+	margin: auto;
+	text-align: center;
+	font-family: 'Goldman', cursive;
+	font-weight: 800;
+	letter-spacing: -0.3333em;
+	background: url(https://images7.alphacoders.com/410/thumb-1920-410661.jpg);
+	background-position: center;
+   background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+.content p {
+	line-height: 0.66666em;
+}
+.content .top-line {
+	font-size: 120px;
+}
+.content .bottom-line {
+	font-size: 240px;
+}
+
+.box3 {
+  position: relative;
+  margin: auto;
+  font-size: 5rem;
+  word-spacing: 0.2em;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  color: transparent;
+  background-color: #E8A95B;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+.box3::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 6rem, white 11rem, transparent 11.15rem, transparent 15rem, rgba(255, 255, 255, 0.3) 20rem, transparent 25rem, transparent 27rem, rgba(255, 255, 255, 0.6) 32rem, white 33rem, rgba(255, 255, 255, 0.3) 33.15rem, transparent 38rem, transparent 40rem, rgba(255, 255, 255, 0.3) 45rem, transparent 50rem, transparent 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 150% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: shine 5s infinite linear;
+          animation: shine 5s infinite linear;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -190% 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -190% 0;
+  }
+}
+
+</style>
+
+<body>
+    <div class="box">
+        Clip
+    </div>
+
+    <div class="box2"> background-clip: text</div>
+
+    <div class="container">
+        <div class="content">
+            <p class="top-line">abstract</p>
+            <p class="bottom-line">FIRE</p>
+        </div>
+    </div>
+
+    <p data-text="Lorem ipsum dolor" class="box3"> Lorem ipsum dolor </p>
+
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+.a1 {
+    background: linear-gradient(90deg, #ff3c41, #fc0, #0ebeff);
+    background-size: 0 3px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: 1s all;
+    color: #0cc;
+}
+.a1:hover {
+    background-size: 100% 3px;
+    color: #000;
+}
+
+.a2 {
+    background: 
+        linear-gradient(90deg, #0cc, #0cc),
+        linear-gradient(90deg, #ff3c41, #fc0, #8500d8);
+    background-size: 100% 3px, 0 3px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%, 0 100%;
+    transition: 0.5s all;
+    color: #0cc;
+}
+.a2:hover {
+    background-size: 0 3px, 100% 3px;
+    color: #000;
+}
+
+</style>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a class="a1">Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam</a>, molestiae laboriosam sit repellendus sed sapiente quidem quod accusantium vero.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a class="a2">Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam</a>, molestiae laboriosam sit repellendus sed sapiente quidem quod accusantium vero.</p>
+</body>
+</html>

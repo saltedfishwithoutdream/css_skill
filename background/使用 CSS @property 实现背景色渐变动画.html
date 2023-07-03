@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+@property --colorA {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: fuchsia;
+}
+@property --colorB {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: teal;
+}
+@property --colorC {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f79188;
+}
+@property --colorD {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: yellow;
+}
+@property --colorE {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: orange;
+}
+@property --colorF {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: red;
+}
+div {
+  width: 50vmin;
+  height: 50vmin;
+  border: 1px solid #ccc;
+  margin: auto;
+  cursor: pointer;
+}
+
+.A {
+  background: linear-gradient(45deg, var(--colorA), var(--colorB), var(--colorC), var(--colorD), var(--colorE), var(--colorF));
+  transition: --colorA 5000ms, --colorB 5000ms, --colorC 5000ms, --colorD 5000ms, --colorE 5000ms, --colorF 5000ms;
+}
+.A:hover {
+  --colorA: red;
+  --colorB: orange;
+  --colorC: yellow;
+  --colorD: green;
+  --colorE: teal;
+  --colorF: fuchsia;
+}
+
+.B {
+  background: linear-gradient(45deg, var(--colorA), var(--colorC), var(--colorF));
+  -webkit-animation: change 10s infinite linear;
+          animation: change 10s infinite linear;
+}
+
+@-webkit-keyframes change {
+  20% {
+    --colorA: red;
+    --colorC: #a93ee0;
+    --colorF: fuchsia;
+  }
+  40% {
+    --colorA: #ff3c41;
+    --colorC: #e228a0;
+    --colorF: #2e4c96;
+  }
+  60% {
+    --colorA: orange;
+    --colorC: green;
+    --colorF: teal;
+  }
+  80% {
+    --colorA: #ae63e4;
+    --colorC: #0ebeff;
+    --colorF: #efc371;
+  }
+}
+
+@keyframes change {
+  20% {
+    --colorA: red;
+    --colorC: #a93ee0;
+    --colorF: fuchsia;
+  }
+  40% {
+    --colorA: #ff3c41;
+    --colorC: #e228a0;
+    --colorF: #2e4c96;
+  }
+  60% {
+    --colorA: orange;
+    --colorC: green;
+    --colorF: teal;
+  }
+  80% {
+    --colorA: #ae63e4;
+    --colorC: #0ebeff;
+    --colorF: #efc371;
+  }
+}
+
+</style>
+
+<body>
+    <div class="A"></div>
+    <div class="B"></div>
+</body>
+</html>
