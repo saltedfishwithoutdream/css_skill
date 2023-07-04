@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+@charset "UTF-8";
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+@property --per {
+  syntax: "<percentage> | <length>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+div {
+  margin: auto;
+  position: relative;
+  width: 30vw;
+  height: 70vh;
+  background: url(https://picsum.photos/1200/1000?random=1) no-repeat;
+  background-size: cover;
+}
+div::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(https://picsum.photos/1200/1000?random=2) no-repeat;
+  background-size: cover;
+  z-index: 1;
+  -webkit-mask: linear-gradient(45deg, #000 var(--per), transparent var(--per), transparent var(--per));
+            mask: linear-gradient(45deg, #000 var(--per), transparent var(--per), transparent var(--per));
+
+  -webkit-animation: maskRotate 4s ease-in-out infinite;
+  animation: maskRotate 4s ease-in-out infinite;
+}
+
+@-webkit-keyframes maskRotate {
+    0% {
+        --per: 0%;
+    }
+    100% {
+        --per: 100%;
+    }
+}
+
+@keyframes maskRotate {
+    0% {
+        --per: 0%;
+    }
+    100% {
+        --per: 100%;
+    }
+        
+}
+
+</style>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>
