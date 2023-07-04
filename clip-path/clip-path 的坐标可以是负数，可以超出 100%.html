@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+div {
+    margin: 50px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(-5% -9%, 107% -3%, 100% 108%, -5% 105%);
+}
+
+div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px dashed #e30;
+}
+div img {
+    width: 120%;
+    height: 120%;
+}
+
+</style>
+
+<body>
+    <div>
+        <img src="https://picsum.photos/400/400?random=5" alt="">
+    </div>
+    
+</body>
+</html>

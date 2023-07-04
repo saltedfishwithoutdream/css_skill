@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #23232a;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 20%;
+  transition: 0.25s;
+  cursor: pointer;
+}
+img:hover {
+  transform: scale(120%);
+}
+
+.parent {
+  padding: 0.8rem;
+  background: black;
+  height: 95vh;
+  min-height: 500px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 2.5vh;
+  border: 1px solid #c9b473;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 0.3fr 1fr;
+  grid-template-rows: 20% 40% 20% 20%;
+  grid-template-areas: "one two two three" "four five five five" "six five five five" "six seven eight eight";
+}
+
+.child:nth-child(1) img, .child:nth-child(2) img, .child:nth-child(3) img {
+  width: 120%;
+  height: 120%;
+}
+.child:first-child {
+  grid-area: one;
+  clip-path: polygon(0% 0%, 93.24% 0%, 105.04% 110.16%, 0% 90%);
+}
+.child:nth-child(2) {
+  grid-area: two;
+  clip-path: polygon(0% 0%, 108.28% 0%, 96.45% 110.13%, 10.55% 110.93%);
+}
+.child:nth-child(3) {
+  grid-area: three;
+  clip-path: polygon(15.05% 0%, 100% 0%, 99.35% 91.7%, 3.08% 108.48%);
+}
+.child:nth-child(4) {
+  grid-area: four;
+  clip-path: polygon(0% -0.85%, 106.34% 9.98%, 121.32% 65.63%, 99.66% 109.89%, 1.86% 124.41%);
+}
+.child:nth-child(4) img {
+  width: 135%;
+  height: 135%;
+}
+.child:nth-child(5) {
+  grid-area: five;
+  clip-path: polygon(6.4% 6.48%, 47.24% 5.89%, 100% 0%, 98.41% 96.85%, 53.37% 100%, 53% 63.21%, 3.23% 73.02%, 14.3% 44.04%);
+}
+.child:nth-child(6) {
+  grid-area: six;
+  clip-path: polygon(2.14% 29.3%, 99.34% 15.42%, 98.14% 100.82%, 1.57% 101.2%);
+}
+.child:nth-child(7) {
+  grid-area: seven;
+  clip-path: polygon(7.92% 33.47%, 96.31% 23.39%, 95.38% 100%, 5.3% 100.85%);
+}
+.child:nth-child(8) {
+  grid-area: eight;
+  clip-path: polygon(2.5% 22.35%, 100% 0%, 100% 100%, 1.55% 100%);
+}
+.child:nth-child(9) {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  clip-path: polygon(5.94% 28.66%, 100.61% -0.67%, 101.1% 108.57%, 5.4% 126.28%);
+}
+.child:nth-child(9) img {
+  object-position: 30% 50%;
+  height: 135%;
+}
+
+/* 去掉clip-path的效果，用来对比使用clip-path后的变化 */
+/* .child {
+    clip-path: none !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+} */
+
+/* 图片编号 */
+.child {
+    position: relative;
+}
+.child::before {
+    position: absolute;
+    color: red;
+    font-size: 30px;
+    top: 30px;
+    right: 30px;
+}
+.child:nth-child(1)::before {
+    content: '1';
+}
+.child:nth-child(2)::before {
+    content: '2';
+}
+.child:nth-child(3)::before {
+    content: '3';
+}
+.child:nth-child(4)::before {
+    content: '4';
+}
+.child:nth-child(5)::before {
+    content: '5';
+}
+.child:nth-child(6)::before {
+    content: '6';
+    top: 50px;
+    right: 20px;
+}
+.child:nth-child(7)::before {
+    content: '7';
+}
+.child:nth-child(8)::before {
+    content: '8';
+}
+.child:nth-child(9)::before {
+    content: '9';
+}
+</style>
+
+<body>
+    <div class="parent">
+        <div class="child" >
+          <img src="https://i.pinimg.com/originals/0d/67/72/0d677237854ed19dcfe69f0f9a4065ee.jpg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://www.global-esports.news/wp-content/uploads/2021/12/GTA-Online-Dr-dre.jpg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://cdn.vox-cdn.com/thumbor/l1JrkTrv0CU0oqdFxqL1YE1yD_8=/0x0:1920x1080/1200x800/filters:focal(738x260:1044x566)/cdn.vox-cdn.com/uploads/chorus_image/image/70011561/gta_v_starlet.0.0.jpg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://i.pinimg.com/564x/94/76/dd/9476dd3d346a3d697362da94b9aa2dc2.jpg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://media.wired.co.uk/photos/606d9b0e307b8f0b37c72402/1:1/w_1999,h_1999,c_limit/wired-gta-v.jpg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://cdn.mos.cms.futurecdn.net/h5DdXrQqcYVA6FswLpye4.jpeg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://transform.nws.ai/https%3A%2F%2Fcdn.thenewsroom.io%2Fplatform%2Fstory_media%2F1288820653%2Fcover-78.webp/fill/1200/630/" alt="">
+        </div>
+        <div class="child">
+          <img src="https://i.pinimg.com/736x/ea/e7/b5/eae7b513060702e86bdd51d4d5cfc5ae.jpg" alt="">
+        </div>
+        <div class="child">
+          <img src="https://image.cnbcfm.com/api/v1/image/101047802-v_franklin_chop_2880x1800r.jpg?v=1511971551&w=929&h=523&vtcrop=y" alt="">
+        </div>
+      
+      </div>  
+      
+</body>
+</html>

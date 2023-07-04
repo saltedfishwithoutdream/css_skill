@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+.polygon-animate {
+    width: 200px;
+    height: 200px;
+    background-color: crimson;
+    animation: polygon-ani 3s linear infinite;
+}
+/* 进行动画或者过渡的两个 clip-path 状态， polygon() 内的顶点的数量必须保持一致 */
+@keyframes polygon-ani {
+    0%,
+    5% {
+        clip-path: polygon(
+            50% 0%,
+            0% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%
+        );
+    }
+    30%,
+    35% {
+        clip-path: polygon(
+            50% 0%, 
+            100% 50%, 
+            50% 100%, 
+            0% 50%,
+            0% 50%
+        );
+    }
+    60%,
+    65% {
+        clip-path: polygon(
+            50% 0%, 
+            100% 38%, 
+            82% 100%,
+            18% 100%, 
+            0% 38%
+        );
+    }
+    95%,
+    100% {
+        clip-path: polygon(
+            50% 0%,
+            0% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%
+        );
+    }
+}
+
+</style>
+
+<body>
+    <div class="polygon-animate"></div>
+
+</body>
+</html>

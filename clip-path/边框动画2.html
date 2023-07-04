@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+div {
+    position: relative;
+    margin: 100px;
+    height: 100px;
+    width: 200px;
+    background-color: gold;
+    border-radius: 20px;
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+}
+div::before,  div::after{
+    content: "";
+    position: absolute;
+    /* background-color: aquamarine; */
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid gold;
+    border-radius: 20px;
+    animation: clippath 3s infinite linear;
+}
+div::after {
+    animation: clippath2 3s infinite linear;
+}
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
+    }
+}
+
+@keyframes clippath2 {
+    0%,
+    100% {
+        clip-path: inset(95% 0 0 0);
+    }
+    25% {
+        clip-path: inset(0 0 0 95%);
+    }
+    50% {
+        clip-path: inset( 0 0 95% 0);
+    }
+    75% {
+        clip-path: inset(0 95% 0 0);
+    }
+}
+
+</style>
+
+<body>
+    <div>
+        Hello
+    </div>
+</body>
+</html>
