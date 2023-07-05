@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+<!-- https://codepen.io/Chokcoco/pen/vYExwvm -->
+<style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: #000;
+  overflow: hidden;
+}
+
+.g-number {
+  position: absolute;
+  width: 300px;
+  top: 27%;
+  text-align: center;
+  font-size: 32px;
+  z-index: 10;
+  color: #fff;
+}
+
+.g-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: auto;
+}
+
+.g-contrast {
+  filter: contrast(10) hue-rotate(0);
+  width: 300px;
+  height: 400px;
+  background-color: #000;
+  overflow: hidden;
+  -webkit-animation: hueRotate 10s infinite linear;
+          animation: hueRotate 10s infinite linear;
+}
+
+.g-circle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  filter: blur(8px);
+}
+.g-circle::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 200px;
+  height: 200px;
+  background-color: #00ff6f;
+  border-radius: 42% 38% 62% 49%/45%;
+  -webkit-animation: rotate 10s infinite linear;
+          animation: rotate 10s infinite linear;
+}
+.g-circle::before {
+  content: "";
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 10;
+}
+
+.g-bubbles {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100px;
+  height: 40px;
+  transform: translate(-50%, 0);
+  border-radius: 100px 100px 0 0;
+  background-color: #00ff6f;
+  filter: blur(5px);
+}
+
+li {
+  position: absolute;
+  border-radius: 50%;
+  background: #00ff6f;
+}
+
+li:nth-child(0) {
+  left: 28px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  -webkit-animation: moveToTop 6s ease-in-out -1.609s infinite;
+          animation: moveToTop 6s ease-in-out -1.609s infinite;
+}
+
+li:nth-child(1) {
+  left: 16px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 29px;
+  height: 29px;
+  -webkit-animation: moveToTop 6s ease-in-out -0.835s infinite;
+          animation: moveToTop 6s ease-in-out -0.835s infinite;
+}
+
+li:nth-child(2) {
+  left: 78px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  -webkit-animation: moveToTop 8s ease-in-out -3.497s infinite;
+          animation: moveToTop 8s ease-in-out -3.497s infinite;
+}
+
+li:nth-child(3) {
+  left: 65px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 19px;
+  height: 19px;
+  -webkit-animation: moveToTop 7s ease-in-out -4.179s infinite;
+          animation: moveToTop 7s ease-in-out -4.179s infinite;
+}
+
+li:nth-child(4) {
+  left: 44px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 21px;
+  height: 21px;
+  -webkit-animation: moveToTop 7s ease-in-out -1.22s infinite;
+          animation: moveToTop 7s ease-in-out -1.22s infinite;
+}
+
+li:nth-child(5) {
+  left: 49px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  -webkit-animation: moveToTop 4s ease-in-out -4.792s infinite;
+          animation: moveToTop 4s ease-in-out -4.792s infinite;
+}
+
+li:nth-child(6) {
+  left: 47px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  -webkit-animation: moveToTop 6s ease-in-out -2.218s infinite;
+          animation: moveToTop 6s ease-in-out -2.218s infinite;
+}
+
+li:nth-child(7) {
+  left: 26px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  -webkit-animation: moveToTop 7s ease-in-out -0.029s infinite;
+          animation: moveToTop 7s ease-in-out -0.029s infinite;
+}
+
+li:nth-child(8) {
+  left: 45px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  -webkit-animation: moveToTop 7s ease-in-out -1.83s infinite;
+          animation: moveToTop 7s ease-in-out -1.83s infinite;
+}
+
+li:nth-child(9) {
+  left: 62px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  -webkit-animation: moveToTop 6s ease-in-out -2.477s infinite;
+          animation: moveToTop 6s ease-in-out -2.477s infinite;
+}
+
+li:nth-child(10) {
+  left: 77px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 23px;
+  height: 23px;
+  -webkit-animation: moveToTop 8s ease-in-out -0.228s infinite;
+          animation: moveToTop 8s ease-in-out -0.228s infinite;
+}
+
+li:nth-child(11) {
+  left: 51px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 27px;
+  height: 27px;
+  -webkit-animation: moveToTop 8s ease-in-out -1.619s infinite;
+          animation: moveToTop 8s ease-in-out -1.619s infinite;
+}
+
+li:nth-child(12) {
+  left: 64px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  -webkit-animation: moveToTop 5s ease-in-out -0.42s infinite;
+          animation: moveToTop 5s ease-in-out -0.42s infinite;
+}
+
+li:nth-child(13) {
+  left: 56px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 19px;
+  height: 19px;
+  -webkit-animation: moveToTop 6s ease-in-out -1.696s infinite;
+          animation: moveToTop 6s ease-in-out -1.696s infinite;
+}
+
+li:nth-child(14) {
+  left: 51px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  -webkit-animation: moveToTop 4s ease-in-out -4.104s infinite;
+          animation: moveToTop 4s ease-in-out -4.104s infinite;
+}
+
+li:nth-child(15) {
+  left: 67px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 19px;
+  height: 19px;
+  -webkit-animation: moveToTop 6s ease-in-out -4.955s infinite;
+          animation: moveToTop 6s ease-in-out -4.955s infinite;
+}
+
+@-webkit-keyframes rotate {
+  50% {
+    border-radius: 45%/42% 38% 58% 49%;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+}
+
+@keyframes rotate {
+  50% {
+    border-radius: 45%/42% 38% 58% 49%;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+}
+@-webkit-keyframes moveToTop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+    transform: translate(-50%, -180px);
+  }
+}
+@keyframes moveToTop {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+    transform: translate(-50%, -180px);
+  }
+}
+@-webkit-keyframes hueRotate {
+  100% {
+    filter: contrast(15) hue-rotate(360deg);
+  }
+}
+@keyframes hueRotate {
+  100% {
+    filter: contrast(15) hue-rotate(360deg);
+  }
+}
+</style>
+
+<body>
+    <div class="g-container">
+        <div class="g-number">98.7%</div>
+        <div class="g-contrast">
+            <div class="g-circle"></div>
+            <ul class="g-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-family: "Lobster", cursive;
+  perspective: 160vmin;
+  overflow: hidden;
+}
+
+p {
+  margin: auto;
+  font-size: 24vmin;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+  -webkit-animation: rotate 10s infinite ease-in-out;
+          animation: rotate 10s infinite ease-in-out;
+}
+p span {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.9), 2px 2px 0 rgba(0, 0, 0, 0.7), 3px 3px 0 rgba(0, 0, 0, 0.5), 4px 4px 0 rgba(0, 0, 0, 0.3), 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+p span:nth-child(-n+5) {
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+}
+
+span:nth-child(1),
+span:nth-last-child(1) {
+  -webkit-animation: filterBlur-1 10s infinite ease-in-out;
+          animation: filterBlur-1 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes filterBlur-1 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(6px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+
+@keyframes filterBlur-1 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(6px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+span:nth-child(2),
+span:nth-last-child(2) {
+  -webkit-animation: filterBlur-2 10s infinite ease-in-out;
+          animation: filterBlur-2 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes filterBlur-2 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(5px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+
+@keyframes filterBlur-2 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(5px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+span:nth-child(3),
+span:nth-last-child(3) {
+  -webkit-animation: filterBlur-3 10s infinite ease-in-out;
+          animation: filterBlur-3 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes filterBlur-3 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(4px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+
+@keyframes filterBlur-3 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(4px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+span:nth-child(4),
+span:nth-last-child(4) {
+  -webkit-animation: filterBlur-4 10s infinite ease-in-out;
+          animation: filterBlur-4 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes filterBlur-4 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(3px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+
+@keyframes filterBlur-4 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(3px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+span:nth-child(5),
+span:nth-last-child(5) {
+  -webkit-animation: filterBlur-5 10s infinite ease-in-out;
+          animation: filterBlur-5 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes filterBlur-5 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(2px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+
+@keyframes filterBlur-5 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(2px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+span:nth-child(6),
+span:nth-last-child(6) {
+  -webkit-animation: filterBlur-6 10s infinite ease-in-out;
+          animation: filterBlur-6 10s infinite ease-in-out;
+}
+
+@-webkit-keyframes filterBlur-6 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(1px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+
+@keyframes filterBlur-6 {
+  0% {
+    filter: blur(0px) contrast(5);
+  }
+  50% {
+    filter: blur(1px) contrast(1);
+  }
+  100% {
+    filter: blur(0px) contrast(5);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotateY(-45deg);
+  }
+  50% {
+    transform: rotateY(45deg);
+  }
+  100% {
+    transform: rotateY(-45deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(-45deg);
+  }
+  50% {
+    transform: rotateY(45deg);
+  }
+  100% {
+    transform: rotateY(-45deg);
+  }
+}
+
+
+</style>
+
+<body>
+    <p>
+        <span>C</span>
+        <span>S</span>
+        <span>S</span>
+        <span>3</span>
+        <span>D</span>
+        <span>E</span>
+        <span>F</span>
+        <span>F</span>
+        <span>E</span>
+        <span>C</span>
+        <span>T</span>
+    </p>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+div {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.demo {
+  background: url("https://picsum.photos/1200/1000?random=5");
+  background-size: cover;
+}
+
+.animation {
+  z-index: 1;
+  overflow: hidden;
+}
+.animation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://picsum.photos/1200/1000?random=5");
+  background-size: cover;
+  -webkit-animation: change 10s infinite linear;
+          animation: change 10s infinite linear;
+}
+
+@-webkit-keyframes change {
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  80% {
+    filter: blur(50px);
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(3);
+    filter: blur(50px);
+  }
+}
+
+@keyframes change {
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  80% {
+    filter: blur(50px);
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(3);
+    filter: blur(50px);
+  }
+}
+.filter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://picsum.photos/1200/1000?random=5");
+  background-size: cover;
+  filter: blur(50px);
+  transform: scale(3);
+}
+</style>
+
+<body>
+    <div class="img demo"></div>
+    <div class="img animation"></div>
+    <div class="img filter"></div>
+</body>
+</html>
