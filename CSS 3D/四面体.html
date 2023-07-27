@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.perspective {
+  margin: auto;
+  transform-style: preserve-3d;
+  perspective: 3000px;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  animation: rotate 40s linear infinite;
+}
+.container .img {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  line-height: 400px;
+  text-align: center;
+  font-size: 120px;
+  top: 0;
+  left: 0;
+}
+.container .img:nth-child(1) {
+  background: rgba(77, 51, 26, 0.2);
+  transform: rotateY(125deg) translateZ(200px);
+}
+.container .img:nth-child(2) {
+  background: rgba(153, 153, 51, 0.4);
+  transform: rotateY(215deg) translateZ(200px);
+}
+.container .img:nth-child(3) {
+  background: rgba(153, 204, 102, 0.6);
+  transform: rotateY(305deg) translateZ(200px);
+}
+.container .img:nth-child(4) {
+  background: rgba(179, 230, 179, 0.8);
+  transform: rotateY(395deg) translateZ(200px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateZ(-2000px) rotateY(0deg) rotateZ(30deg);
+  }
+  50% {
+    transform: translateZ(-2000px) rotateY(-360deg) rotateZ(-30deg);
+  }
+  100% {
+    transform: translateZ(-2000px) rotateY(-720deg) rotateZ(30deg);
+  }
+}
+</style>
+
+<body>
+    <div class="perspective">
+        <div class="container">
+            <div class="img">3</div>
+            <div class="img">D</div>
+            <div class="img">视</div>
+            <div class="img">图</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  perspective: 2px;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: linear-gradient(#efecdb, #b0ab8f);
+}
+
+.g-container {
+  position: relative;
+  transform-style: preserve-3d;
+  height: 150%;
+}
+.g-container > div {
+  font-size: 5vw;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 20%;
+  box-shadow: 0 10px 50px #5f2f1182;
+  border: 10px solid #efecdb;
+}
+.g-container > div img {
+  width: 100%;
+  height: 100%;
+}
+.g-container .section-one {
+  transform: translateZ(-1.3px) translateX(60vw) translateY(-60vh);
+}
+.g-container .section-two {
+  transform: translateZ(-4.7px) translateX(-20vw) translateY(-20vh);
+}
+.g-container .section-three {
+  transform: translateZ(-2px) translateX(30vw) translateY(15vh);
+}
+.g-container .section-four {
+  transform: translateZ(-1.7px) translateX(-23vw) translateY(51vh);
+}
+.g-container .section-five {
+  transform: translateZ(-1.8px) translateX(25vw) translateY(95vh);
+}
+.g-container .section-six {
+  transform: translateZ(-2.5px) translateX(65vw) translateY(125vh);
+}
+.g-container .section-seven {
+  transform: translateZ(-1.9px) translateX(85vw) translateY(153vh);
+}
+.g-container .section-eight {
+  transform: translateZ(-3.8px) translateX(-45vw) translateY(205vh);
+}
+.g-container .section-night {
+  transform: translateZ(-1.2px) translateX(35vw) translateY(235vh);
+}
+.g-container .section-ten {
+  transform: translateZ(-2.9px) translateX(65vw) translateY(270vh);
+}
+</style>
+
+<body>
+    <div class="g-container">
+        <div class="section-one">
+            <img src="https://picsum.photos/800/800?random=100" alt="">
+        </div>
+        <div class="section-two">
+            <img src="https://picsum.photos/800/800?random=200" alt="">
+        </div>
+        <div class="section-three">
+            <img src="https://picsum.photos/800/800?random=300" alt="">
+        </div>
+        <div class="section-four">
+            <img src="https://picsum.photos/800/800?random=400" alt="">
+        </div>
+        <div class="section-five">
+            <img src="https://picsum.photos/800/800?random=500" alt="">
+        </div>
+        <div class="section-six">
+            <img src="https://picsum.photos/800/800?random=600" alt="">
+        </div>
+        <div class="section-seven">
+            <img src="https://picsum.photos/800/800?random=650" alt="">
+        </div>
+        <div class="section-eight">
+            <img src="https://picsum.photos/800/800?random=700" alt="">
+        </div>
+        <div class="section-night">
+            <img src="https://picsum.photos/800/800?random=750" alt="">
+        </div>
+        <div class="section-ten">
+            <img src="https://picsum.photos/800/800?random=800" alt="">
+        </div>
+    </div>
+</body>
+</html>

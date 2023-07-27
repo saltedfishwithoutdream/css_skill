@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+  .container {
+  position: relative;
+}
+
+.stage {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+.stage .control {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(-2000px) rotateY(50deg) rotateZ(0deg);
+  animation: rotate 40s linear infinite;
+}
+.stage .control .imgWrap {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+}
+.stage .control .imgWrap .img {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  line-height: 400px;
+  text-align: center;
+  font-size: 120px;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 0px;
+}
+.stage .control .imgWrap .img:nth-child(1) {
+  background: rgba(38, 26, 13, 0.1);
+  transform: rotateY(80deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(2) {
+  background: rgba(77, 77, 26, 0.2);
+  transform: rotateY(125deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(3) {
+  background: rgba(77, 115, 38, 0.3);
+  transform: rotateY(170deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(4) {
+  background: rgba(51, 153, 51, 0.4);
+  transform: rotateY(215deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(5) {
+  background: rgba(64, 191, 128, 0.5);
+  transform: rotateY(260deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(6) {
+  background: rgba(102, 204, 204, 0.6);
+  transform: rotateY(305deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(7) {
+  background: rgba(140, 179, 217, 0.7);
+  transform: rotateY(350deg) translateZ(482.84px);
+}
+.stage .control .imgWrap .img:nth-child(8) {
+  background: rgba(179, 179, 230, 0.8);
+  transform: rotateY(395deg) translateZ(482.84px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateZ(-2000px) rotateY(0deg) rotateZ(10deg);
+  }
+  50% {
+    transform: translateZ(-2000px) rotateY(-360deg) rotateZ(-10deg);
+  }
+  100% {
+    transform: translateZ(-2000px) rotateY(-720deg) rotateZ(10deg);
+  }
+}
+</style>
+
+<body>
+  <div class="container">
+    <!-- 舞台层 -->
+    <div class="stage">
+      <!-- 控制层 -->
+      <div class="control">
+        <!-- 图片层 -->
+        <div class="imgWrap">
+          <div class="img">1</div>
+          <div class="img">2</div>
+          <div class="img">3</div>
+          <div class="img">4</div>
+          <div class="img">5</div>
+          <div class="img">6</div>
+          <div class="img">7</div>
+          <div class="img">8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
