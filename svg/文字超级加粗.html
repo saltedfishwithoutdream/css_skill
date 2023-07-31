@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Darumadrop+One&display=swap");
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #e98b00;
+}
+
+div {
+  position: relative;
+  margin: auto;
+  width: 700px;
+  line-height: 150px;
+  font-size: 120px;
+  color: #e98b00;
+  letter-spacing: 10px;
+  text-align: center;
+}
+div::before {
+  content: "にほんご";
+  position: absolute;
+  inset: 0;
+  filter: url(#outline);
+  z-index: 0;
+}
+
+div:nth-child(2) {
+  font-family: "Cherry Bomb One", cursive;
+}
+
+div:nth-child(3) {
+  font-family: "Darumadrop One", cursive;
+}
+</style>
+
+<body>
+    <div>にほんご</div>
+    <div>にほんご</div>
+    <div>にほんご</div>
+    <svg width="0" height="0">
+        <filter id="outline">
+            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="10"></feMorphology>
+
+            <feFlood flood-color="#f3e8c9" flood-opacity="1" result="flood"></feFlood>
+            <feComposite in="flood" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+
+            <feMerge>
+                <feMergeNode in="OUTLINE" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </svg>
+</body>
+</html>

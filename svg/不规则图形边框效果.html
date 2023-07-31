@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.g-container {
+    position: relative;
+    margin: auto;
+}
+.arrow {
+    position: relative;
+    width: 180px;
+    height: 64px;
+    filter: url(#outline);
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background: #f49714;
+        clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);    
+    }
+}
+</style>
+
+<body>
+    <div class="g-container">
+        <div class="arrow"></div>
+    </div>
+    
+    <svg>
+        <filter id="outline">
+            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="1"></feMorphology>
+    
+             <feMerge>
+                <feMergeNode in="DILATED" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </svg>
+</body>
+</html>
