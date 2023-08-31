@@ -1,0 +1,6 @@
+transition: transform 1s linear 0s;
+
+transition-property：过渡属性，指定应用过渡属性的名称；all 是 transition-property 的一个特殊的值。指定 all 时，元素下任何支持过渡的属性都将被赋予过渡效果。
+transition-duration：过渡持续时间，指定过渡动画持续的时间；
+transition-timing-function：过渡缓动，指定过渡动画过程中的缓动函数；
+transition-delay：过渡延迟，指定过渡动画延迟多久才被触发。

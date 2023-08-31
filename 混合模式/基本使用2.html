@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+</head>
+
+<style>
+
+.container {
+    position: relative;
+    margin: 150px;
+}
+.container > div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.red {
+    background-color: rgba(255, 0, 0, .8);
+    transform: translateX(25%);
+}
+.green {
+    background-color: rgba(0, 255, 0, .8);
+    transform: translateX(-25%);
+}
+.blue {
+    background-color: rgba(0, 0, 255, .8);
+    transform: translateY(-25%);
+    mix-blend-mode: color;
+}
+
+
+.bgblend {
+  position: relative;
+  margin-left: 400px;
+  width: 225px;
+  height: 75px;
+  border: 2px dashed #999;
+  background:
+      linear-gradient(rgba(128, 64, 191, 1), rgba(128, 64, 191, 1)),
+      linear-gradient(rgba(255, 204, 0, 1), rgba(255, 204, 0, 1));
+  background-size: 150px 100%;
+  background-repeat: no-repeat;
+  background-position: 75px 0, 0 0;
+  background-blend-mode: overlay;
+}
+
+</style>
+
+<body>
+  <div class="container">
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+  </div>
+
+  <div class="bgblend"></div>
+  
+</body>
+
+
+
+</html>

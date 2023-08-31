@@ -9,95 +9,337 @@
 
 <style>
 :root {
-	font-size: 62.5%;
-	--space--base: 1.5rem;
-	--space--xl: 6rem;
-	--font-size--h1: 4rem;
-	--translateZ: calc(12vw * -1);
-	--translateX:  clamp(3rem, 6vw, 8rem);
-	--circle__size: 8rem;
-	--clip-path--main: circle(var(--circle__size) at 40% 50%);
-	--mix-blend-mode__option: normal;
-	--retro__bg: rgba(238, 208, 148, 1);
-	--cosmic__bg: rgba(54, 13, 255, 1);
-	--pastel__bg: rgba(219, 196, 244, 0.7);
-	--background--main: var(--retro__bg);
-	--retro__bg--layer1: rgba(89, 139, 116, 1);
-	--retro__bg--layer2: rgba(105, 130, 48, 1);
-	--retro__bg--layer3: rgba(158, 61, 27, 1);
-	--retro__bg--layer4: rgba(196, 103, 32, 1);
-	--retro__bg--layer5: rgba(196, 143, 32, 1);
-	--cosmic__bg--layer1: rgba(27, 2, 115, 1);
-	--cosmic__bg--layer2: rgba(181, 0, 254, 1);
-	--cosmic__bg--layer3: rgba(255, 13, 139, 1);
-	--cosmic__bg--layer4: rgba(181, 160, 242, 1);
-	--cosmic__bg--layer5: rgba(19, 232, 237, 1);
-	--pastel__bg--layer1: rgba(245, 92, 211, 1);
-	--pastel__bg--layer2: rgba(190, 205, 233, 1);
-	--pastel__bg--layer3: rgba(177, 232, 208, 1);
-	--pastel__bg--layer4: rgba(245, 187, 174, 1);
-	--pastel__bg--layer5: rgba(240, 245, 134, 1);
-	--monochromatic__bg--layer1: hwb(120 0% 80%);
-	--monochromatic__bg--layer2: hwb(120 0% 40%);
-	--monochromatic__bg--layer3: hwb(120 40% 40%);
-	--monochromatic__bg--layer4: hwb(120 40% 0%);
-	--monochromatic__bg--layer5: hwb(120 80% 0%);
-	--background-color--layer1: var(--retro__bg--layer1);
-	--background-color--layer2: var(--retro__bg--layer2);
-	--background-color--layer3: var(--retro__bg--layer3);
-	--background-color--layer4: var(--retro__bg--layer4);
-	--background-color--layer5: var(--retro__bg--layer5);
+  font-size: 62.5%;
+  --space--base: 1.5rem;
+  --space--xl: 6rem;
+  --font-size--h1: 4rem;
+  --translateZ: calc(12vw * -1);
+  --translateX: clamp(3rem, 6vw, 8rem);
+  --circle__size: 8rem;
+  --clip-path--main: circle(var(--circle__size) at 40% 50%);
+  --mix-blend-mode__option: normal;
+  --retro__bg: rgba(238, 208, 148, 1);
+  --cosmic__bg: rgba(54, 13, 255, 1);
+  --pastel__bg: rgba(219, 196, 244, 0.7);
+  --background--main: var(--retro__bg);
+  --retro__bg--layer1: rgba(89, 139, 116, 1);
+  --retro__bg--layer2: rgba(105, 130, 48, 1);
+  --retro__bg--layer3: rgba(158, 61, 27, 1);
+  --retro__bg--layer4: rgba(196, 103, 32, 1);
+  --retro__bg--layer5: rgba(196, 143, 32, 1);
+  --cosmic__bg--layer1: rgba(27, 2, 115, 1);
+  --cosmic__bg--layer2: rgba(181, 0, 254, 1);
+  --cosmic__bg--layer3: rgba(255, 13, 139, 1);
+  --cosmic__bg--layer4: rgba(181, 160, 242, 1);
+  --cosmic__bg--layer5: rgba(19, 232, 237, 1);
+  --pastel__bg--layer1: rgba(245, 92, 211, 1);
+  --pastel__bg--layer2: rgba(190, 205, 233, 1);
+  --pastel__bg--layer3: rgba(177, 232, 208, 1);
+  --pastel__bg--layer4: rgba(245, 187, 174, 1);
+  --pastel__bg--layer5: rgba(240, 245, 134, 1);
+  --monochromatic__bg--layer1: hwb(120 0% 80%);
+  --monochromatic__bg--layer2: hwb(120 0% 40%);
+  --monochromatic__bg--layer3: hwb(120 40% 40%);
+  --monochromatic__bg--layer4: hwb(120 40% 0%);
+  --monochromatic__bg--layer5: hwb(120 80% 0%);
+  --background-color--layer1: var(--retro__bg--layer1);
+  --background-color--layer2: var(--retro__bg--layer2);
+  --background-color--layer3: var(--retro__bg--layer3);
+  --background-color--layer4: var(--retro__bg--layer4);
+  --background-color--layer5: var(--retro__bg--layer5);
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: 'Righteous', cursive;
-	font-size: 2rem;
-	line-height: 1.5;
-	letter-spacing: 0.12em;
-	word-spacing: 0.16em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: var(--background--main);
-	padding: var(--space--base);
-	overflow-x: hidden;
+  font-family: "Righteous", cursive;
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background--main);
+  padding: var(--space--base);
+  overflow-x: hidden;
 }
 
 .heading--layers {
-	display: grid;
-	grid-template-areas: "text";
-	transform-style: preserve-3d;
-	transform-origin: left center;
-	perspective: 1500px;
-	text-align: center;
-	transition: width 2000ms ease-in-out;
+  display: grid;
+  grid-template-areas: "text";
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  perspective: 1500px;
+  text-align: center;
+  transition: width 2000ms ease-in-out;
 }
 
+h1,
+.layer {
+  color: white;
+  grid-area: text;
+}
 
+h1 {
+  font-size: var(--font-size--h1);
+  padding-top: var(--space--xl);
+  padding-bottom: var(--space--xl);
+}
+
+code {
+  margin-top: var(--space--base);
+}
+
+button {
+  font-family: "Righteous", cursive;
+  padding-top: var(--space--base);
+  padding-bottom: var(--space--base);
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.button--pause {
+  height: 6rem;
+  width: 6rem;
+  padding: 1rem;
+  border-radius: 3rem;
+  position: absolute;
+  top: var(--space--base);
+  right: var(--space--base);
+  transition: transform 200ms ease-in-out;
+}
+
+.button--pause:hover,
+.button--pause:active,
+.button--pause:focus {
+  transform: scale(1.03);
+}
+
+.layer {
+  opacity: 1;
+  mix-blend-mode: var(--mix-blend-mode__option);
+  isolation: isolate;
+  -webkit-clip-path: var(--clip-path--main);
+          clip-path: var(--clip-path--main);
+  -webkit-animation-duration: 30000ms;
+          animation-duration: 30000ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.layer:first-of-type {
+  background-color: var(--background-color--layer1);
+  transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  -webkit-animation-name: moveLastLayer;
+          animation-name: moveLastLayer;
+}
+
+.layer:nth-of-type(2) {
+  background-color: var(--background-color--layer2);
+  transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  -webkit-animation-name: moveForthLayer;
+          animation-name: moveForthLayer;
+}
+
+.layer:nth-of-type(3) {
+  background-color: var(--background-color--layer3);
+  transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  -webkit-animation-name: moveThirdLayer;
+          animation-name: moveThirdLayer;
+}
+
+.layer:nth-of-type(4) {
+  background-color: var(--background-color--layer4);
+  transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  -webkit-animation-name: moveSecondLayer;
+          animation-name: moveSecondLayer;
+}
+
+.layer:last-of-type {
+  background-color: var(--background-color--layer5);
+  -webkit-animation-name: moveFirstLayer;
+          animation-name: moveFirstLayer;
+}
+
+@-webkit-keyframes moveFirstLayer {
+  15%, 25% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  35%, 45% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  55%, 65% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  75%, 85% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  95% {
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+@keyframes moveFirstLayer {
+  15%, 25% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  35%, 45% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  55%, 65% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  75%, 85% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  95% {
+    transform: translateX(0) translateZ(0);
+  }
+}
+@-webkit-keyframes moveSecondLayer {
+  15%, 25% {
+    transform: translateX(0) translateZ(0);
+  }
+  35%, 45% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  55%, 65% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  75%, 85% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  95% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+}
+@keyframes moveSecondLayer {
+  15%, 25% {
+    transform: translateX(0) translateZ(0);
+  }
+  35%, 45% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  55%, 65% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  75%, 85% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  95% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+}
+@-webkit-keyframes moveThirdLayer {
+  15%, 25% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  35%, 45% {
+    transform: translateX(0) translateZ(0);
+  }
+  55%, 65% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  75%, 85% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  95% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+}
+@keyframes moveThirdLayer {
+  15%, 25% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  35%, 45% {
+    transform: translateX(0) translateZ(0);
+  }
+  55%, 65% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  75%, 85% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  95% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+}
+@-webkit-keyframes moveForthLayer {
+  15%, 25% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  35%, 45% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  55%, 65% {
+    transform: translateX(0) translateZ(0);
+  }
+  75%, 85% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  95% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+}
+@keyframes moveForthLayer {
+  15%, 25% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  35%, 45% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  55%, 65% {
+    transform: translateX(0) translateZ(0);
+  }
+  75%, 85% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+  95% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+}
+@-webkit-keyframes moveLastLayer {
+  15%, 25% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  35%, 45% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  56%, 65% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  75%, 85% {
+    transform: translateX(0) translateZ(0);
+  }
+  90% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
+}
 @keyframes moveLastLayer {
-	15%, 25% {
-		transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
-	}
-	
-	35%, 45% {
-		transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
-	}
-	
-	56%, 65% {
-		transform: translateX(var(--translateX)) translateZ(var(--translateZ));
-	}
-	
-	75%, 85% {
-		transform: translateX(0) translateZ(0);
-	}
-	
-	90% {
-		transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
-	}
+  15%, 25% {
+    transform: translateX(calc(var(--translateX) * 3)) translateZ(calc(var(--translateZ) * 3));
+  }
+  35%, 45% {
+    transform: translateX(calc(var(--translateX) * 2)) translateZ(calc(var(--translateZ) * 2));
+  }
+  56%, 65% {
+    transform: translateX(var(--translateX)) translateZ(var(--translateZ));
+  }
+  75%, 85% {
+    transform: translateX(0) translateZ(0);
+  }
+  90% {
+    transform: translateX(calc(var(--translateX) * 4)) translateZ(calc(var(--translateZ) * 4));
+  }
 }
 </style>
 
@@ -139,4 +381,69 @@ body {
         <button type="button" class="button--blend-mode" data-mix-blend-mode="luminocity">Luminocity</button>
     </code>
 </body>
+
+<script>
+	let root = document.documentElement;
+const mixBlendModeButtons = document.querySelectorAll('.button--blend-mode');
+const themeButtons = document.querySelectorAll('.button--theme');
+const pauseButton = document.querySelector('.button--pause');
+const layers = document.querySelectorAll('.layer');
+const heading = document.querySelector('h1');
+
+const changeMixBlendMode = mixBlendMode => {
+  root.style.setProperty('--mix-blend-mode__option', mixBlendMode);
+};
+
+const changeMixBlendName = mixBlendMode => {
+  heading.innerText = mixBlendMode;
+};
+
+const changeThemeBackground = theme => {
+  root.style.setProperty('--background--main', `var(--${theme}__bg)`);
+};
+
+const changeThemeLayerBackgrounds = theme => {
+  layers.forEach((layer, index) => {
+    root.style.setProperty(`--background-color--layer${index + 1}`, `var(--${theme}__bg--layer${index + 1})`);
+  });
+};
+
+const handleAnimationPlayingState = () => {
+  layers.forEach(layer => {
+    const running = layer.style.animationPlayState || 'running';
+    layer.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+    layer.style.animationPlayState = running === 'running' ? pauseButton.innerText = 'Play' : pauseButton.innerText = 'Pause';
+  });
+};
+
+const handleMixBlendModeChanges = mixBlendModeValue => {
+  changeMixBlendMode(mixBlendModeValue);
+  changeMixBlendName(mixBlendModeValue);
+};
+
+const handleThemeChange = themeValue => {
+  changeThemeBackground(themeValue);
+  changeThemeLayerBackgrounds(themeValue);
+};
+
+const addEventTypeListener = (eventType, selector, callback) => {
+  selector.addEventListener(eventType, event => {
+    callback(event);
+  });
+};
+
+mixBlendModeButtons.forEach(button => {
+  addEventTypeListener('click', button, event => handleMixBlendModeChanges(button.getAttribute('data-mix-blend-mode')));
+  addEventTypeListener('touchend', button, event => handleMixBlendModeChanges(button.getAttribute('data-mix-blend-mode')));
+});
+
+themeButtons.forEach(button => {
+  addEventTypeListener('click', button, event => handleThemeChange(button.getAttribute('data-theme')));
+  addEventTypeListener('touchend', button, event => handleThemeChange(button.getAttribute('data-theme')));
+});
+
+addEventTypeListener('click', pauseButton, event => handleAnimationPlayingState());
+addEventTypeListener('touchend', pauseButton, event => handleAnimationPlayingState());
+</script>
+
 </html>
